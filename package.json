@@ -1,0 +1,13 @@
+{
+  "name": "astrobox360",
+  "version": "0.1.0",
+  "description": "Drag and drop for astrobox",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Spencer Owen",
+  "devDependencies": {
+    "electron": "^4.1.0"
+  }
+}
