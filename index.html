@@ -8,7 +8,6 @@
     <form id="myForm">
       Printer: <input type="text" name="printer" id="printer" ><br>
       ApiKey: <input type="text" name='apikey' id="apikey"><br>
-      File: <input type="text" name='file' id="file"><br>
       <button type="button" id="start">Select folder to watch</button>
       <button type="button" id="stop" style="display:none;">Stop watching</button>
 
@@ -102,6 +101,17 @@
             });
         },false);
 
+        document.getElementById("stop").addEventListener("click",function(e){
+            if(!watcher){
+                console.log("You need to start first the watcher");
+            }else{
+                watcher.close();
+                document.getElementById("start").disabled = false;
+                showInLogFlag = false;
+                document.getElementById("messageLogger").innerHTML = "Nothing is being watched";
+            }
+        },false);
+        
         function addLog(message,type){
           var el = document.getElementById("log-container");
           var newItem = document.createElement("LI");       // Create a <li> node
