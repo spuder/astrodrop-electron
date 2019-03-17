@@ -11,6 +11,7 @@
     "electron": "^4.1.0"
   },
   "dependencies": {
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "chokidar": "^2.1.2"
   }
 }
