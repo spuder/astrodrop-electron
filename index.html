@@ -5,15 +5,17 @@
     <title>Hello World!</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-    <form>
-      Printer:<br>
-      <input type="text" name="printer"><br>
-      ApiKey:<br>
-      <input type="text" name='apikey'><br>
+    <form id="myForm">
+      Printer: <input type="text" name="printer"><br>
+      ApiKey: <input type="text" name='apikey'><br>
+      File: <input type="text" name='file'><br>
+      <input id="submit" type="button" value="Send" onclick="results()" />
     </form>
+    <script>
+      function results() {
+        form = document.getElementById("myFrom");
+        console.log(form);
+      }
+    </script>
   </body>
 </html>
