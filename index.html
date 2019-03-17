@@ -6,15 +6,14 @@
   </head>
   <body>
     <form id="myForm">
-      Printer: <input type="text" name="printer"><br>
-      ApiKey: <input type="text" name='apikey'><br>
-      File: <input type="text" name='file'><br>
+      Printer: <input type="text" name="printer" id="printer" ><br>
+      ApiKey: <input type="text" name='apikey' id="apikey"><br>
+      File: <input type="text" name='file' id="file"><br>
       <input id="submit" type="button" value="Send" onclick="results()" />
     </form>
     <script>
       function results() {
-        form = document.getElementById("myFrom");
-        console.log(form);
+        console.log( document.getElementById("printer").value );
       }
     </script>
   </body>
