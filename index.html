@@ -3,21 +3,30 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <form id="myForm">
-      Printer: <input type="text" name="printer" id="printer" ><br>
-      ApiKey: <input type="text" name='apikey' id="apikey"><br>
-      <button type="button" id="start">Select folder to watch</button>
-      <button type="button" id="stop" style="display:none;">Stop watching</button>
+    <div class="printer">
+      <img src="./assets/original-prusa-i3-mk2s-to-mk25s-upgrade-kit.jpg">
+    </div>
+    <div class="astrobox">
+        <form id="myForm">
+          Printer: <input type="text" name="printer" id="printer" ><br>
+          ApiKey: <input type="text" name='apikey' id="apikey"><br>
+          <!-- <button type="button" id="start">Select folder to watch</button> -->
+          <button type="button" id="stop" style="display:none;">Stop watching</button>
 
-      <input id="submit" type="button" value="Send" onclick="results()" />
-      <span id="messageLogger"></span>
-      <ul id="log-container">
-      </ul>
+          <input id="submit" type="button" value="Send" onclick="results()" />
+          <span id="messageLogger"></span>
+          <ul id="log-container">
+          </ul>
 
-    </form>
-    <script>
+        </form>
+      <dif style="background-color:grey">
+
+      </div>
+    </div>
+    <!-- <script>
       var fileWatcher = require("chokidar");
       var fs = require('fs');
       var watcher = null;
@@ -111,7 +120,7 @@
                 document.getElementById("messageLogger").innerHTML = "Nothing is being watched";
             }
         },false);
-        
+
         function addLog(message,type){
           var el = document.getElementById("log-container");
           var newItem = document.createElement("LI");       // Create a <li> node
@@ -126,6 +135,6 @@
           newItem.appendChild(textnode);                    // Append the text to <li>
           el.appendChild(newItem);
       }
-    </script>
+    </script> -->
   </body>
 </html>

@@ -1,0 +1,20 @@
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.printer {
+  border-style: solid;
+  border-width: thin;
+  max-width: 100%;
+  height: auto;
+  background: "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj-lOqOvJfhAhVm4YMKHZuNASoQjRx6BAgBEAU&url=https%3A%2F%2Fshop.prusa3d.com%2Fen%2Fprinter-upgrades%2F179-original-prusa-i3-mk2s-to-mk25s-upgrade-kit.html&psig=AOvVaw3GYrqju9iroS__S0--y4qD&ust=1553403217546747"
+}
+
+.astrobox {
+  background-color: lightgrey;
+  width: 50%;
+  position: relative;
+  margin:0px auto;
+}
