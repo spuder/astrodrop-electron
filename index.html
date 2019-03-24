@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <title>Hello World!</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   </head>
   <body>
-    <div class="printer">
-      <img src="./assets/original-prusa-i3-mk2s-to-mk25s-upgrade-kit.jpg">
+    <div id="header">
     </div>
-    <div class="astrobox">
+    <div id="printer">
+      <img src="https://shop.prusa3d.com/529-thickbox_default/original-prusa-i3-mk2s-to-mk25s-upgrade-kit.jpg">
+    </div>
+    <div id="astrobox">
         <form id="myForm">
           Printer: <input type="text" name="printer" id="printer" ><br>
           ApiKey: <input type="text" name='apikey' id="apikey"><br>
           <!-- <button type="button" id="start">Select folder to watch</button> -->
           <button type="button" id="stop" style="display:none;">Stop watching</button>
 
-          <input id="submit" type="button" value="Send" onclick="results()" />
-          <span id="messageLogger"></span>
+          <input id="submit" type="button" value="Upload" onclick="upload()" />
+          <input id="submit" type="button" value="Upload & Print" onclick="uploadandprint()" />
+
+          <!-- <span id="messageLogger"></span>
           <ul id="log-container">
-          </ul>
+          </ul> -->
 
         </form>
       <dif style="background-color:grey">
