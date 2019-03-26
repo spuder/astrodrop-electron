@@ -2,11 +2,13 @@
 // const url = require('url');
 // const path = require('path');
 
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Tray } = require('electron')
+const path = require('path')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let win
+let win = null
+let tray = null
 
 function createWindow () {
   // Create the browser window.
@@ -25,6 +27,14 @@ function createWindow () {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     win = null
+  })
+
+  // Create a new tray
+  tray = new Tray(path.join('assets', 'printer-icon-16.png'))
+  tray.on('right-click', toggleWindow)
+  tray.on('double-click', toggleWindow)
+  tray.on('click', function (event) {
+    toggleWindow()
   })
 }
 
@@ -52,3 +62,19 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+// toggle window
+const toggleWindow = () => {
+  if (window.isVisible()) {
+    window.hide()
+  } else {
+    showWindow()
+  }
+}
+
+const showWindow = () => {
+  const position = getWindowPosition()
+  window.setPosition(position.x, position.y, false)
+  window.show()
+  window.focus()
+}
