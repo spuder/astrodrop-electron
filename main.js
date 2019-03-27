@@ -78,3 +78,4 @@ const showWindow = () => {
   window.show()
   window.focus()
 }
+
