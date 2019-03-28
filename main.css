@@ -3,6 +3,12 @@ img {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  background-color: grey;
+
+}
+
+div {
+  background-color: grey;
 }
 
 #header {
@@ -18,7 +24,7 @@ img {
 }
 
 #astrobox {
-  width: 50%;
+  /* width: 50%; */
   position: relative;
   margin:0px auto;
 }
