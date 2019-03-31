@@ -11,6 +11,10 @@ div {
   background-color: grey;
 }
 
+canvas {
+  background-color: grey;
+
+}
 #header {
   height: 10px;
 }
