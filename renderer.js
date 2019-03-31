@@ -2,7 +2,23 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 
-// printer_status()
+printer_status()
+
+function printer_state() {
+  let file = document.getElementById("file").value;
+  let apikey = document.getElementById("apikey").value;
+  console.log("file is " + file);
+  console.log("apikey is " + apikey);
+  let req = new XMLHttpRequest();
+  req.withCredentials = true;
+  let formData = new FormData();
+  req.open("GET", "http://astrobox1.local/api/printer");
+  req.setRequestHeader("X-Api-Key", apikey);
+  req.send(formData);
+  console.log(req.readyState);
+  return req.readyState;
+  #TODO: what if 404 or not available
+}
 
 function printer_status(status) {
   var c = document.getElementById("printer_status");
@@ -10,16 +26,9 @@ function printer_status(status) {
   ctx.beginPath();
   ctx.arc(window.innerWidth/2,9,6,0, 2 * Math.PI);
   ctx.stroke();
-  if (status === 'online' ) {
+  console.log("status is " + status)
+  if (status === 1 ) {
     ctx.fillStyle = "green";
-    ctx.fill();
-  }
-  if (status === 'unavailable' ) {
-    ctx.fillStyle = "red";
-    ctx.fill();
-  }
-  if (status === 'busy' ) {
-    ctx.fillStyle = "orange";
     ctx.fill();
   }
 }
@@ -45,5 +54,6 @@ document.querySelector('#submitFile').addEventListener('click', () => {
 })
 
 document.querySelector('#printerStatus').addEventListener('click', () => {
-    printer_status('online')
+    var state = printer_state();
+    printer_status(state);
 })
