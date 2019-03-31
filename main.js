@@ -79,24 +79,3 @@ const showWindow = () => {
   window.focus()
 }
 
-printer_status()
-
-function printer_status(status) {
-  var c = document.getElementById("printer_status");
-  var ctx = c.getContext("2d");
-  ctx.beginPath();
-  ctx.arc(window.innerWidth/2,9,6,0, 2 * Math.PI);
-  ctx.stroke();
-  if (status === 'online' ) {
-    ctx.fillStyle = "green";
-    ctx.fill();
-  }
-  if (status === 'unavailable' ) {
-    ctx.fillStyle = "red";
-    ctx.fill();
-  }
-  if (status === 'busy' ) {
-    ctx.fillStyle = "orange";
-    ctx.fill();
-  }
-}
