@@ -2,7 +2,7 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 
-printer_status()
+// printer_status()
 
 function printer_status(status) {
   var c = document.getElementById("printer_status");
@@ -42,4 +42,8 @@ function upload() {
 
 document.querySelector('#submitFile').addEventListener('click', () => {
     upload()
+})
+
+document.querySelector('#printerStatus').addEventListener('click', () => {
+    printer_status('online')
 })
