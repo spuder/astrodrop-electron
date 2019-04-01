@@ -13,6 +13,7 @@ function printer_state() {
   req.open("GET", `http://${printer}/api/printer`);
   req.setRequestHeader("X-Api-Key", apikey);
   req.send(formData);
+  console.log(req);
   console.log(req.readyState);
   return req.readyState;
   // TODO: what if 404 or not available
@@ -22,8 +23,10 @@ function printer_status(status) {
   // TODO: This makes a new circle every time, doesn't move dynamically with window
   var c = document.getElementById("printer_status");
   var ctx = c.getContext("2d");
+  ctx.canvas.width  = window.innerWidth;
+  // ctx.canvas.height = window.innerHeight;
   ctx.beginPath();
-  ctx.arc(window.innerWidth/2,9,6,0, 2 * Math.PI);
+  ctx.arc(ctx.canvas.width/2,9,6,0, 2 * Math.PI);
   ctx.stroke();
   if (status === 1 ) {
     ctx.fillStyle = "green";
