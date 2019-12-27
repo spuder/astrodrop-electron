@@ -5,3 +5,8 @@ An experiment as part of the `#100DaysOfCode` challenge to make an electron app 
 It's currently so ugly you guys. If you like making things pretty, please help. It is just so so ugly.
 
 ![](./assets/screenshot1.png)
+
+## Usage
+
+npm install
+npm start
