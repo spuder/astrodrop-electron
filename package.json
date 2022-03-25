@@ -8,7 +8,7 @@
   },
   "author": "Spencer Owen",
   "devDependencies": {
-    "electron": "^4.1.0"
+    "electron": "^13.6.6"
   },
   "dependencies": {
     "nodemon": "^1.18.10",
